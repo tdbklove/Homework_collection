@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>倒數計時器</title>
+  <script src="../jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Serif+KR:wght@700;900&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div class="box">
+    <div>
+      <div class="show">
+        <span id="h">00</span>
+        <span>:</span>
+        <span id="m">00</span>
+        <span class="sm">:</span>
+        <span id="s">00</span>
+      </div>
+    </div>
+    <div class="time">
+      <div class="countdown">
+        <div>
+          <h3>HOUR</h3>
+          <input type="number" name="h" min="0" max="23" value="0" step="1">
+        </div>
+        <div>
+          <h3>MINUTE</h3>
+          <input type="number" name="m" min="0" max="59" value="0" step="1">
+        </div>
+        <div>
+          <h3>SECOND</h3>
+          <input type="number" name="s" min="0" max="59" value="0" step="1">
+        </div>
+        <button id="sub"><span>開始計時</span>START</button>
+      </div>
+      <div>
+        <button>倒數器</button>
+        <button>時鐘</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+<script>
+  // let time = new Date();
+
+  $("#sub").click(function(){
+    let 
+        h =  $("input[name='h']").val(),
+        m =  $("input[name='m']").val(),
+        s =  $("input[name='s']").val();
+
+    if(Number(h)<0 || Number(m)<0 || Number(s)<0 || Number(h)>23 || Number(m)>59 || Number(s)>59){
+
+      alert("請輸入正確的數值");
+
+    }else{
+
+      let num = Number((h*60*60)) + Number((m*60)) + Number(s);
+  
+      h = (h<10)? "0"+h : h;
+      m = (m<10)? "0"+m : m;
+      s = (s<10)? "0"+s : s;
+  
+      $("#h").text(h);
+      $("#m").text(m);
+      $("#s").text(s);
+  
+      const countdown = setInterval(function(){
+        if(Number(h)>0 || Number(m)>0 || Number(s)>0){
+          num--;
+          // console.log(num);
+          h = Math.floor(num/60/60);
+          m = Math.floor((num/60%60));
+          s = Math.floor((num-(h*60*60)-(m*60)));
+          h = (h<10)? "0"+h : h;
+          m = (m<10)? "0"+m : m;
+          s = (s<10)? "0"+s : s;
+          $("#h").text(h);
+          $("#m").text(m);
+          $("#s").text(s);
+        }else{
+          alert("時間到");
+          clearInterval(countdown);
+        }
+      },1000);
+
+    }
+  })
+</script>

@@ -1,0 +1,234 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+main{
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+section.kabi{
+  width: 30vh;
+  height: 30vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+div.body{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: solid 0.5rem #110708;
+  background-color: #EC727A;
+  position: relative;
+  overflow: hidden;
+}
+div.body>div.body-shadow{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #F097AF;
+  position: absolute;
+  left: 10%;
+  bottom: 13%;
+}
+div.hand{
+  width: 45.45%;
+  height: 33.3%;
+  border-radius: 50%;
+  background-color: #EC727A;
+  overflow: hidden;
+}
+div.hand>div{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #F097AF;
+}
+div.left.hand{
+  position: absolute;
+  top: 30%;
+  left: -20%;
+  border-top: solid 0.5rem #110708;
+  border-right: none 0.5rem #110708;
+  border-bottom: solid 0.5rem #110708;
+  border-left: solid 0.5rem #110708;
+  transform-origin: 145%;
+  transform: rotate(-25deg);
+}
+div.left.hand>div{
+  position: absolute;
+  right: 20%;
+  bottom: 25%;
+}
+div.right.hand{
+  position: absolute;
+  top: 25%;
+  right: -20%;
+  border-top: solid 0.5rem #110708;
+  border-right: solid 0.5rem #110708;
+  border-bottom: solid 0.5rem #110708;
+  border-left: none 0.5rem #110708;
+  transform-origin: -50%;
+  transform: rotate(25deg);
+}
+div.right.hand>div{
+  position: absolute;
+  left: 20%;
+  bottom: 25%;
+}
+div.foot{
+  width: 63%;
+  height: 35.5%;
+  border: solid 0.5rem #110708;
+  background-color: #CA0B4D;
+  overflow: hidden;
+  position: absolute;
+}
+div.foot>div{
+  width: 100%;
+  height: 100%;
+  background-color: #DA1A5C;
+  overflow: hidden;
+}
+div.foot>div>div{
+  width: 15%;
+  height: 20%;
+  border-radius: 50%;
+  background-color: #EC727A;
+}
+div.left.foot{
+  border-radius: 50%;
+  position: absolute;
+  left: 0%;
+  bottom: 10%;
+  transform-origin: -10%;
+  transform: rotate(40deg);
+}
+div.left.foot>div{
+  border-radius: 50%;
+  position: absolute;
+  right: 5%;
+  bottom: 20%;
+}
+div.left.foot>div>div{
+  position: absolute;
+  bottom: 40%;
+  right: 2%;
+  transform: rotate(25deg);
+}
+div.right.foot{
+  border-radius: 50%;
+  position: absolute;
+  right: -10%;
+  bottom: -10%;
+  transform-origin: 50%;
+  transform: rotate(40deg);
+}
+div.right.foot>div{
+  border-radius: 50%;
+  position: absolute;
+  right: 5%;
+  bottom: 20%;
+}
+div.right.foot>div>div{
+  position: absolute;
+  bottom: 40%;
+  right: 2%;
+  transform: rotate(25deg);
+}
+div.expression{
+  width: 64%;
+  height: 40%;
+  position: absolute;
+  top: 40%;
+  right: -25%;
+  /* background-color: #CA0B4D; */
+  transform: translate(-50%,-50%) rotate(-5deg);
+}
+div.eyes{
+  width: 18%;
+  height: 60%;
+  border: solid 0.25rem #110708;
+  background-color: #05509A;
+  border-radius: 50%;
+  overflow: hidden;
+}
+div.eyes>div.top{
+  width: 75%;
+  height: 50%;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%,0);
+}
+div.eyes>div.bottom{
+  width: 150%;
+  height: 100%;
+  background-color: #110708;
+  border-radius: 50%;
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translate(-50%,0);
+}
+div.left.eyes{
+  position: absolute;
+  left: 22%;
+  transform: rotate(0deg);
+}
+div.right.eyes{
+  width: 16%;
+  position: absolute;
+  right: 22%;
+  transform: rotate(-5deg);
+}
+div.blush{
+  width: 20%;
+  height: 17%;
+  border-radius: 50%;
+  background-color: #EC727A;
+  position: absolute;
+  top: 50%;
+  transform: rotate(-10deg);
+}
+div.right.blush{
+  width: 20%;
+  height: 17%;
+  border-radius: 50%;
+  background-color: #EC727A;
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  transform: rotate(10deg);
+}
+div.mouth{
+  width: 5%;
+  height: 2%;
+  background-color: #801C40;
+  border: solid 0.25rem #110708;
+  border-radius: 50%;
+  position: absolute;
+  right: 42%;
+  bottom: 20%;
+  transform: translate(-50%,0) rotate(2deg);
+  overflow: hidden;
+}
+div.mouth>div{
+  width: 100%;
+  height: 120%;
+  border-radius: 50%;
+  background-color: #EC727A;
+  border: solid 0.25rem #110708;
+  position: absolute;
+  right: -80%;
+  bottom: -50%;
+  transform: translate(-50%,0);
+}
+
+@keyframes identifier {
+  
+}

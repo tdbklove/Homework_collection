@@ -1,0 +1,231 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+}
+div.box>div::before{
+  position: absolute;
+  top: -25%;
+  left: -8%;
+  color: #F7B22D;
+  font-family: 'Noto Serif KR', serif;
+  font-size: 4rem;
+}
+div.co_text::before{
+  content: "剩餘時間";
+}
+div.cl_text::before{
+  content: "現在時間";
+}
+div.box{
+  width: 800px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+div.bg,div.show{
+  width: 800px;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+div.zero{
+  width: 112.5px;
+  height: 200px;
+}
+div.bg div.zero{
+  background-image: url(img/num-0.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+div.show div.zero{
+  background-image: url(img/num-00.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+div.show{
+  position: absolute;
+  top: 0;
+}
+div.colon{
+  width: 17.1px;
+  height: 200px;
+  background-image: url(img/num-10.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+div.time{
+  display: flex;
+  height: 65px;
+}
+div.time>div.countdown{
+  display: flex;
+  justify-content: space-between;
+  flex-basis: 54%;
+}
+div.time>div.countdown>div{
+  font-family: 'Nanum Gothic', sans-serif;
+  width: 100px;
+  height: 65px;
+  background-color: #F7B22D;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+input{
+  width: 85%;
+  height: 22px;
+  font-family: 'Nanum Gothic', sans-serif;
+  background-color: #6A5024;
+  border: none;
+  margin-top: 5px;
+  color: #E61D1E;
+}
+button#sub{
+  width: 110px;
+  background-color: #6A5024;
+  border: none;
+  color: #E61D1E;
+  font-size: 1.3rem;
+}
+button#sub:hover{
+  background-color: #F7B22D;
+  transition: background-color 0.5s;
+}
+button#sub>span{
+  font-family: 'Noto Serif KR', serif;
+  font-size: 1.5rem;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+div.wh{
+  width: 112.5px;
+  height: 200px;
+  background-repeat: no-repeat;
+}
+div.num0{
+  background-image: url(img/num-00.svg);
+}
+div.num1{
+  background-image: url(img/num-01.svg);
+}
+div.num2{
+  background-image: url(img/num-02.svg);
+}
+div.num3{
+  background-image: url(img/num-03.svg);
+}
+div.num4{
+  background-image: url(img/num-04.svg);
+}
+div.num5{
+  background-image: url(img/num-05.svg);
+}
+div.num6{
+  background-image: url(img/num-06.svg);
+}
+div.num7{
+  background-image: url(img/num-07.svg);
+}
+div.num8{
+  background-image: url(img/num-08.svg);
+}
+div.num9{
+  background-image: url(img/num-09.svg);
+}
+.d-none{
+  display: none !important;
+}
+div.input{
+  display: flex;
+  flex-basis: 46%;
+}
+div.clock{
+  flex-basis: 54%;
+  font-family: 'Noto Serif KR', serif;
+  color: #F7B22D;
+  font-size: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+div.clock>div.vids{
+  border: #F7B22D solid 1px;
+  width: 50px;
+  height: 90px;
+  text-align: center;
+  line-height: 41px
+}
+div.clock>div>span{
+  color: #E61D1E;
+  font-size: 3.5rem;
+}
+button#countdown,
+button#clock{
+  height: 90px;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-size: 1.2rem;
+  color: #F7B22D;
+  background-color: #000;
+  border: #F7B22D solid 2px;
+  margin-left: 8px;
+  position: relative;
+  opacity: 0.5;
+}
+button#countdown:hover,
+button#clock:hover{
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+button#countdown.active,
+button#clock.active{
+  opacity: 1;
+}
+button#countdown::after,
+button#clock::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 47.5px;
+  height: 100%;
+  background-image: url(img/stripe.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: stripe 1.5s infinite linear;
+}
+button#countdown{
+  flex-basis: 57%;
+}
+button#clock{
+  flex-basis: 43%;
+}
+button#countdown>div{
+  width: 73%;
+  text-align: center;
+}
+button#clock>div{
+  width: 64%;
+  text-align: center;
+}
+button#countdown>div>span,
+button#clock>div>span{
+  font-family: 'Noto Serif KR', serif;
+  font-size: 2.7rem;
+  line-height: 45px;
+}
+
+@keyframes stripe {
+  0%{
+    background-position: 0 -54.887px;
+  }
+  100%{
+    background-position: 0 -30px;
+  }
+}

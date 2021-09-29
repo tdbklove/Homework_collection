@@ -1,0 +1,342 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+#wave section.kabi{
+  width: 30vh;
+  height: 30vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  animation:  kabi-wave 2.5s ease-in infinite running;
+}
+#wave div.body{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: solid 0.5rem #110708;
+  background-color: #EC727A;
+  position: relative;
+  overflow: hidden;
+}
+#wave div.body>div.body-shadow{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #F097AF;
+  position: absolute;
+  right: 3%;
+  bottom: 13%;
+}
+#wave div.hand{
+  width: 45.45%;
+  height: 33.3%;
+  border-radius: 50%;
+  border: solid 0.5rem #110708;
+  background-color: #EC727A;
+  overflow: hidden;
+}
+#wave div.hand>div{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #F097AF;
+}
+#wave div.left.hand{
+  position: absolute;
+  top: 30%;
+  left: -17%;
+  transform-origin: 145%;
+  transform: rotate(0deg);
+  animation:  left-hand-wave 2.5s ease-in infinite running;
+}
+#wave div.left.hand>div{
+  position: absolute;
+  right: 20%;
+  bottom: 25%;
+}
+#wave div.right.hand{
+  position: absolute;
+  top: 30%;
+  right: -17%;
+  transform-origin: -50%;
+  transform: rotate(0deg);
+  animation:  right-hand-wave 2.5s ease-in infinite running;
+}
+#wave div.right.hand>div{
+  position: absolute;
+  left: 20%;
+  bottom: 25%;
+}
+#wave div.foot{
+  width: 63%;
+  height: 35.5%;
+  border: solid 0.5rem #110708;
+  background-color: #CA0B4D;
+  overflow: hidden;
+  position: absolute;
+}
+#wave div.foot>div{
+  width: 100%;
+  height: 100%;
+  background-color: #DA1A5C;
+  overflow: hidden;
+}
+#wave div.foot>div>div{
+  width: 15%;
+  height: 20%;
+  border-radius: 50%;
+  background-color: #EC727A;
+}
+#wave div.left.foot{
+  border-radius: 70% 30% 45% 35%;
+  position: absolute;
+  left: -10%;
+  bottom: -7%;
+}
+#wave div.left.foot>div{
+  border-radius: 70% 30% 45% 35%;
+  position: absolute;
+  left: 5%;
+  bottom: 20%;
+}
+#wave div.left.foot>div>div{
+  position: absolute;
+  bottom: 35%;
+  left: 2%;
+  transform: rotate(-25deg);
+}
+#wave div.right.foot{
+  border-radius: 30% 70% 35% 45%;
+  position: absolute;
+  right: -10%;
+  bottom: -7%;
+}
+#wave div.right.foot>div{
+  border-radius: 30% 70% 35% 45%;
+  position: absolute;
+  right: 5%;
+  bottom: 20%;
+}
+#wave div.right.foot>div>div{
+  position: absolute;
+  bottom: 35%;
+  right: 2%;
+  transform: rotate(25deg);
+}
+#wave div.expression{
+  width: 64%;
+  height: 40%;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  /* background-color: #CA0B4D; */
+  transform: translate(-50%,-50%);
+}
+#wave div.eyes{
+  width: 18%;
+  height: 60%;
+  border: solid 0.25rem #110708;
+  background-color: #05509A;
+  border-radius: 50%;
+  overflow: hidden;
+}
+#wave div.eyes>div.top{
+  width: 75%;
+  height: 50%;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%,0);
+}
+#wave div.eyes>div.bottom{
+  width: 150%;
+  height: 100%;
+  background-color: #110708;
+  border-radius: 50%;
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translate(-50%,0);
+}
+#wave div.left.eyes{
+  position: absolute;
+  left: 22%;
+}
+#wave div.right.eyes{
+  position: absolute;
+  right: 22%;
+}
+#wave div.blush{
+  width: 20%;
+  height: 17%;
+  border-radius: 50%;
+  background-color: #EC727A;
+  position: absolute;
+  top: 50%;
+}
+#wave div.right.blush{
+  width: 20%;
+  height: 17%;
+  border-radius: 50%;
+  background-color: #EC727A;
+  position: absolute;
+  top: 50%;
+  right: 0%;
+}
+#wave div.mouth{
+  width: 8%;
+  height: 13%;
+  background-color: #801C40;
+  border: solid 0.25rem #110708;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  bottom: 20%;
+  transform: translate(-50%,0);
+  overflow: hidden;
+  animation: mouth-wave 2.5s ease-in infinite running;
+}
+#wave div.mouth>div{
+  width: 150%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #EC727A;
+  border: solid 0.25rem #110708;
+  position: absolute;
+  left: 50%;
+  bottom: -50%;
+  transform: translate(-50%,0);
+}
+
+@keyframes kabi-wave {
+  0%{
+    height: 30vh;
+    transform: translate(-50%,-50%);
+  }
+  13.33%{
+    height: 30vh;
+    transform: translate(-50%,-50%);
+  }
+  20%{
+    height: 20vh;
+    transform: translate(-50%,-24.8%);
+  }
+  33.33%{
+    height: 35vh;
+    transform: translate(-50%,-57.2%);
+  }
+  46.66%{
+    height: 30vh;
+    transform: translate(-50%,-50%);
+  }
+  60%{
+    height: 32vh;
+    transform: translate(-50%,-53.2%);
+  }
+  73.33%{
+    height: 30vh;
+    transform: translate(-50%,-50%);
+  }
+  86.66%{
+    height: 32vh;
+    transform: translate(-50%,-53.2%);    
+  }
+  100%{
+    height: 30vh;
+    transform: translate(-50%,-50%);
+  }
+}
+@keyframes left-hand-wave {
+  0%{
+    transform: rotate(0deg);
+  }
+  20%{
+    transform: rotate(0deg);
+  }
+  33.33%{
+    transform: rotate(50deg);
+  }
+  46.66%{
+    transform: rotate(15deg);
+  }
+  60%{
+    transform: rotate(30deg);
+  }
+  73.33%{
+    transform: rotate(15deg);
+  }
+  86.66%{
+    transform: rotate(30deg);
+  }
+  100%{
+    transform: rotate(0deg);
+  }
+}
+@keyframes right-hand-wave {
+  0%{
+    transform: rotate(0deg);
+  }
+  20%{
+    transform: rotate(0deg);
+  }
+  33.33%{
+    transform: rotate(25deg);
+  }
+  43.75%{
+    transform: rotate(15deg);
+  }
+  86.66%{
+    transform: rotate(15deg);
+  }
+  100%{
+    transform: rotate(0deg);
+  }
+}
+@keyframes mouth-wave {
+  0%{
+    width: 8%;
+    height: 13%;
+    bottom: 20%;
+    border-radius: 50%;
+  }
+  13.33%{
+    width: 8%;
+    height: 13%;
+    bottom: 20%;
+    border-radius: 50%;
+  }
+  33.33%{
+    width: 20%;
+    height: 30%;
+    bottom: 10%;
+    border-radius: 25% 25% 50% 50%;    
+  }
+  46.66%{
+    height: 25%;
+    bottom: 15%;
+  }
+  60%{
+    height: 30%;
+    bottom: 10%;
+  }
+  73.33%{
+    height: 25%;
+    bottom: 15%;
+  }
+  86.66%{
+    width: 20%;
+    height: 30%;
+    bottom: 10%;
+    border-radius: 25% 25% 50% 50%;
+  }
+  100%{
+    width: 8%;
+    height: 13%;
+    bottom: 20%;
+    border-radius: 50%;
+  }
+}

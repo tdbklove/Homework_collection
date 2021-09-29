@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>類比時鐘</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="jquery-3.6.0.min.js"></script>
+  <script>
+    let time = new Date();
+    let
+      h = time.getHours(),
+      m = time.getMinutes(),
+      s = time.getSeconds();
+
+    let
+      hr = h*(360/12)+m*(360/12/60)+s*(360/12/60/60),
+      mr = m*(360/60)+s*(360/60/60),
+      sr = s*(360/60);
+
+    // console.log(hr);
+    // console.log(mr);
+    // console.log(sr);
+
+    document.write(`
+    <style>
+    @keyframes hGoRound {
+    0%{
+      transform: translate(-50%,0) rotate(${hr}deg); 
+    }
+    100%{
+      transform: translate(-50%,0) rotate(${hr+360}deg);
+    }
+  }
+    @keyframes mGoRound {
+    0%{
+      transform: translate(-50%,0) rotate(${mr}deg); 
+    }
+    100%{
+      transform: translate(-50%,0) rotate(${mr+360}deg);
+    }
+  }
+    @keyframes sGoRound {
+    0%{
+      transform: translate(-50%,0) rotate(${sr}deg); 
+    }
+    100%{
+      transform: translate(-50%,0) rotate(${sr+360}deg);
+    }
+  }
+  </style>
+    `)
+  </script>
+</head>
+<body>
+  <!-- 錶身 -->
+  <div class="body">
+    <!-- 錶面 -->
+    <div class="surface">
+      <!-- 底色 -->
+      <div class="color">
+        <!-- 零件 -->
+        <div class="gear gear1"></div>
+        <div class="gear gear2"></div>
+        <div class="gear gear3"></div>
+        <div class="gear gear4"></div>
+        <div class="gear gear5"></div>
+        <div class="gear gear6"></div>
+        <div class="gear gear7"></div>
+        <div class="gear gear8"></div>
+        <div class="gear gear9"></div>
+        <div class="gear gear10"></div>
+        <div class="gear gear11"></div>
+        <div class="gear gear12"></div>
+        <div class="gear gear13"></div>
+        <div class="gear gear14"></div>
+        <div class="gear gear15"></div>
+        <div class="gear gear16"></div>
+        <div class="gear gear17"></div>
+        <div class="gear gear18"></div>
+        <div class="gear gear19"></div>
+        <div class="gear gear20"></div>
+        <div class="gear gear21"></div>
+        <div class="gear gear22"></div>
+        <div class="gear gear23"></div>
+        <div class="gear gear24"></div>
+        <div class="gear gear25"></div>
+        <div class="gear gear26"></div>
+        <div class="gear gear27"></div>
+        <div class="gear gear28"></div>
+        <div class="gear gear29"></div>
+        <div class="gear gear30"></div>
+        <div class="gear gear31"></div>
+        <div class="gear gear32"></div>
+        <div class="gear gear33"></div>
+        <div class="gear gear34"></div>
+        <div class="gear gear35"></div>
+        <div class="gear gear36"></div>
+        <!-- 玻璃 -->
+        <div class="gear gear37"></div>
+        <!-- 簍空 -->
+        <div class="hollow"></div>
+      </div>
+      <!-- 分針 -->
+      <div class="m"></div>
+      <!-- 時針 -->
+      <div class="h"></div>
+      <!-- 秒針 -->
+      <div class="s"></div>
+    </div>
+  </div>
+</body>
+</html>
+<script>
+  function rand(min,max){
+    let num = Math.random()*(max-min);
+    return Math.floor(num + min);
+  }
+  // console.log(rand(10,30));
+  for(let i=1; i<37; i++){
+    $(`.gear${i}`).css("animation",`goRound ${rand(5,30)}s linear infinite`);
+  }
+</script>

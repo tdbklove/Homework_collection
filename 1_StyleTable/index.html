@@ -1,0 +1,49 @@
+<?php include "../../hw/dd/common.php" ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>元素週期表</title>
+
+  <link rel="stylesheet" href="style_reading.css">
+  <script src="jquery-3.6.0.min.js"></script>
+  <script src="js.js"></script>
+
+
+</head>
+<body>
+  <div class="btn">
+    <p><button id="reading" onclick="cssSwitch(this.value)" value="style_reading.css">閱讀模式</button></p>
+    <p><h1>化學元素週期表</h1></p>
+    <p><button id="recite" onclick="cssSwitch(this.value)" value="style_recite.css">背誦模式</button></p>
+  </div>
+  <table>
+    <tbody>
+      <tr class="rows">
+        <th></th>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+        <th>5</th>
+        <th>6</th>
+        <th>7</th>
+        <th>8</th>
+        <th>9</th>
+        <th>10</th>
+        <th>11</th>
+        <th>12</th>
+        <th>13</th>
+        <th>14</th>
+        <th>15</th>
+        <th>16</th>
+        <th>17</th>
+        <th>18</th>
+      </tr>
+      <script>periodicTable()</script>
+    </tbody>
+  </table>
+</body>
+</html>

@@ -1,0 +1,727 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+#sleep section.kabi{
+  width: 30vh;
+  height: 30vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+#sleep div.body{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: solid 0.5rem #110708;
+  background-color: #EC727A;
+  position: relative;
+  overflow: hidden;
+  animation: body-sleep 7.5s ease-in infinite running;
+}
+#sleep div.body>div.body-shadow{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #F097AF;
+  position: absolute;
+  left: 10%;
+  bottom: 13%;
+  animation: body-shadow-sleep 7.5s ease-in infinite running;
+}
+#sleep div.hand{
+  width: 45.45%;
+  height: 33.3%;
+  border-radius: 50%;
+  background-color: #EC727A;
+  overflow: hidden;
+}
+#sleep div.hand>div{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #F097AF;
+}
+#sleep div.left.hand{
+  position: absolute;
+  top: 30%;
+  left: -20%;
+  border-top: solid 0.5rem #110708;
+  border-right: none 0.5rem #110708;
+  border-bottom: solid 0.5rem #110708;
+  border-left: solid 0.5rem #110708;
+  transform-origin: 135%;
+  transform: rotate(-15deg);
+  animation: left-hand-sleep 7.5s ease-in infinite running;
+}
+#sleep div.left.hand>div{
+  position: absolute;
+  right: 20%;
+  bottom: 25%;
+  animation: left-hand-shadow-sleep 7.5s ease-in infinite running;
+}
+#sleep div.right.hand{
+  position: absolute;
+  top: 25%;
+  right: -20%;
+  border-top: solid 0.5rem #110708;
+  border-right: solid 0.5rem #110708;
+  border-bottom: solid 0.5rem #110708;
+  border-left: none 0.5rem #110708;
+  transform-origin: -50%;
+  transform: rotate(15deg);
+  animation: right-hand-sleep 7.5s ease-in infinite running;
+}
+#sleep div.right.hand>div{
+  position: absolute;
+  left: 20%;
+  bottom: 25%;
+}
+#sleep div.foot{
+  width: 63%;
+  height: 35.5%;
+  border: solid 0.5rem #110708;
+  background-color: #CA0B4D;
+  overflow: hidden;
+  position: absolute;
+}
+#sleep div.foot>div{
+  width: 100%;
+  height: 100%;
+  background-color: #DA1A5C;
+  overflow: hidden;
+}
+#sleep div.foot>div>div{
+  width: 15%;
+  height: 20%;
+  border-radius: 50%;
+  background-color: #EC727A;
+}
+#sleep div.left.foot{
+  border-radius: 50%;
+  position: absolute;
+  left: 0%;
+  bottom: -2%;
+  transform-origin: 20%;
+  transform: rotate(40deg);
+  animation: left-foot-sleep 7.5s ease-in infinite running;
+}
+#sleep div.left.foot>div{
+  border-radius: 50%;
+  position: absolute;
+  right: 5%;
+  bottom: 20%;
+  animation: left-foot-bottom-sleep 7.5s ease-in infinite running;
+}
+#sleep div.left.foot>div>div{
+  position: absolute;
+  bottom: 40%;
+  right: 2%;
+  transform: rotate(25deg);
+  animation: left-foot-top-sleep 7.5s ease-in infinite running;
+}
+#sleep div.right.foot{
+  border-radius: 50%;
+  position: absolute;
+  right: -10%;
+  bottom: -10%;
+  transform-origin: 50%;
+  transform: rotate(40deg);
+  animation: right-foot-sleep 7.5s ease-in infinite running;
+}
+#sleep div.right.foot>div{
+  border-radius: 50%;
+  position: absolute;
+  right: 5%;
+  bottom: 20%;
+}
+#sleep div.right.foot>div>div{
+  position: absolute;
+  bottom: 40%;
+  right: 2%;
+  transform: rotate(25deg);
+}
+#sleep div.expression{
+  width: 64%;
+  height: 40%;
+  position: absolute;
+  top: 40%;
+  right: -25%;
+  /* background-color: #CA0B4D; */
+  transform: translate(-50%,-50%) rotate(-5deg);
+  animation: expression-sleep 7.5s ease-in infinite running;
+}
+#sleep div.eyes{
+  width: 18%;
+  height: 60%;
+  border: solid 0.25rem #110708;
+  background-color: #05509A;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+}
+#sleep div.eyes>div.top{
+  width: 75%;
+  height: 50%;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%,0);
+  animation: eyes-top 7.5s ease-in infinite running;
+}
+#sleep div.eyes>div.bottom{
+  width: 150%;
+  height: 100%;
+  background-color: #110708;
+  border-radius: 50%;
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translate(-50%,0);
+  animation: eyes-bottom 7.5s ease-in infinite running;
+}
+#sleep div.left.eyes{
+  position: absolute;
+  left: 22%;
+  transform: rotate(0deg);
+  animation: left-eyes-sleep 7.5s ease-in infinite running;
+}
+#sleep div.right.eyes{
+  width: 16%;
+  position: absolute;
+  right: 22%;
+  transform: rotate(-5deg);
+  animation: right-eyes-sleep 7.5s ease-in infinite running;
+}
+#sleep div.blush{
+  width: 20%;
+  height: 17%;
+  border-radius: 50%;
+  background-color: #EC727A;
+  position: absolute;
+  top: 50%;
+  transform: rotate(-10deg);
+}
+#sleep div.right.blush{
+  width: 20%;
+  height: 17%;
+  border-radius: 50%;
+  background-color: #EC727A;
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  transform: rotate(10deg);
+}
+#sleep div.mouth{
+  width: 5%;
+  height: 2%;
+  background-color: #801C40;
+  border: solid 0.25rem #110708;
+  border-radius: 50%;
+  position: absolute;
+  right: 42%;
+  bottom: 20%;
+  transform: translate(-50%,0) rotate(2deg);
+  overflow: hidden;
+  animation: mouth-sleep 7.5s ease-in infinite running;
+}
+#sleep div.mouth>div.tongue{
+  width: 200%;
+  height: 600%;
+  border-radius: 50%;
+  background-color: #EC727A;
+  border: solid 0.25rem #110708;
+  position: absolute;
+  left: -10%;
+  bottom: -300%;
+  transform: translate(-50%,0);
+}
+#sleep div.saliva{
+  width: 10%;
+  height: 40%;
+  border-radius: 20px;
+  background-color: #8FCBD6;
+  border: solid 0.25rem #110708;
+  position: absolute;
+  right:55%;
+  top: 80%;
+  transform: translate(-50%,0);
+  animation: mouth-saliva-sleep 7.5s ease-in infinite running;
+}
+
+@keyframes body-sleep {
+  0%{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    left: 0%;
+    transform: rotate(0deg);
+  }
+  14.4%{
+    left: 1%;
+    transform: rotate(5deg);
+  }
+  21.6%{
+    left: 3%;
+    transform: rotate(20deg);
+  }
+  25%{
+    left: 1%;
+    transform: rotate(5deg);
+  }
+  39.84%{
+    left: 3%;
+    bottom: 0%;
+    transform: rotate(20deg);
+  }
+  49.44%{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transform: rotate(0deg);
+  }
+  59.04%{
+    width: 105%;
+    height: 90%;
+    left: 15%;
+    bottom: -25%;
+    border-radius: 50% 50% 40% 40%;
+    transform: rotate(0deg);
+  }
+  68.64%{
+    width: 100%;
+    height: 93%;
+    bottom: -22%;
+  }
+  78.24%{
+    width: 105%;
+    height: 90%;
+    left: 15%;
+    bottom: -25%;
+    border-radius: 50% 50% 40% 40%;
+    transform: rotate(0deg);
+  }
+  90%{
+    width: 100%;
+    height: 93%;
+    bottom: -22%;
+  }
+}
+@keyframes body-shadow-sleep {
+  0%{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    left: 10%;
+    bottom: 13%;
+  }
+  14.4%{
+    left: 10%;
+    bottom: 8%;
+  }
+  21.6%{
+    left: 5%;
+    bottom: 10%;
+  }
+  25%{
+    left: 10%;
+    bottom: 8%;
+  }
+  39.84%{
+    left: 5%;
+    bottom: 10%;
+  }
+  49.44%{
+    left: 10%;
+    bottom: 8%;
+  }
+  59.04%{
+    border-radius: 50% 50% 40% 40%;
+    left: 5%;
+    bottom: 8%;
+  }
+  78.24%{
+    border-radius: 50% 50% 40% 40%;
+    left: 5%;
+    bottom: 8%;
+  }
+}
+@keyframes left-hand-sleep {
+  0%{
+    top: 30%;
+    left: -20%;
+    transform: rotate(-15deg);
+  }
+  14.4%{
+    transform: rotate(-20deg);
+  }
+  21.6%{
+    transform: rotate(-35deg);
+  }
+  25%{
+    transform: rotate(-25deg);
+  }
+  46.5%{
+    top: 30%;
+    left: -20%;
+    transform: rotate(-35deg);
+  }
+  54.8%{
+    top: 70%;
+    left: -45%;
+    transform: rotate(-160deg);
+  }
+  90%{
+    top: 70%;
+    left: -45%;
+    transform: rotate(-160deg);
+  }
+}
+@keyframes left-hand-shadow-sleep {
+  0%{
+    bottom: 25%;
+  }
+  14.4%{
+    bottom: 10%;
+  }
+  21.6%{
+    bottom: 0%;
+  }
+  25%{
+    bottom: 10%;
+  }
+  46.5%{
+    bottom: 0%;
+  }
+  54.8%{
+    bottom: -25%;
+  }
+  87%{
+    bottom: -25%;
+  }
+}
+@keyframes right-hand-sleep {
+  0%{
+    top: 25%;
+    right: -20%;
+    transform: rotate(15deg);
+  }
+  14.4%{
+    transform: rotate(20deg);
+  }
+  21.6%{
+    transform: rotate(35deg);
+  }
+  25%{
+    transform: rotate(25deg);
+  }
+  46.5%{
+    top: 25%;
+    right: -20%;
+    transform: rotate(35deg);
+  }
+  54.8%{
+    top: 70%;
+    right: -30%;
+    transform: rotate(10deg);
+  }
+  90%{
+    top: 70%;
+    right: -30%;
+    transform: rotate(10deg);
+  }
+  95%{
+    top: 45%;
+    right: -30%;
+    transform: rotate(50deg);
+  }
+}
+@keyframes left-foot-sleep {
+  0%{
+    transform: rotate(40deg);
+  }
+  46.5%{
+    left: 0%;
+    bottom: -2%;
+    transform: rotate(40deg);
+  }
+  54.8%{
+    left: 20%;
+    bottom: -10%;
+    transform: rotate(170deg);
+  }
+  90%{
+    left: 20%;
+    bottom: -10%;
+    transform: rotate(170deg);
+  }
+}
+@keyframes left-foot-top-sleep {
+  0%{
+    transform: rotate(25deg);
+  }
+  46.5%{
+    transform: rotate(25deg);
+  }
+  54.8%{
+    transform: rotate(-25deg);
+  }
+  87%{
+    transform: rotate(-25deg);
+  }
+}
+@keyframes left-foot-bottom-sleep {
+  0%{
+    bottom: 20%;
+  }
+  46.5%{
+    bottom: 20%;
+  }
+  54.8%{
+    bottom: -20%;
+  }
+  87%{
+    bottom: -20%;
+  }
+}
+@keyframes right-foot-sleep {
+  0%{
+    transform: rotate(40deg);
+  }
+  46.5%{
+    right: -10%;
+    bottom: -10%;
+    transform: rotate(40deg);
+  }
+  54.8%{
+    right: 15%;
+    bottom: -15%;
+    transform: rotate(180deg);
+  }
+  90%{
+    right: 15%;
+    bottom: -15%;
+    transform: rotate(180deg);
+  }
+}
+@keyframes expression-sleep {
+  0%{
+    top: 40%;
+    right: -25%;
+    transform: translate(-50%,-50%) rotate(-5deg);
+  }
+  14.4%{
+    top: 45%;
+    right: -25%;
+  }
+  21.6%{
+    top: 50%;
+    right: -30%;
+  }
+  25%{
+    top: 45%;
+    right: -25%;
+  }
+  39.84%{
+    top: 50%;
+    right: -30%;
+    transform: translate(-50%,-50%) rotate(-5deg);
+  }
+  54.8%{
+    top: 60%;
+    right: -30%;
+    transform: translate(-50%,-50%) rotate(-0deg);
+  }
+  87%{
+    top: 60%;
+    right: -30%;
+    transform: translate(-50%,-50%) rotate(-0deg);
+  }
+  90%{
+    top: 50%;
+    right: -30%;
+    transform: translate(-50%,-50%) rotate(-0deg);
+  }
+}
+@keyframes left-eyes-sleep {
+  0%{
+    width: 18%;
+    height: 60%;
+    background-color: #05509A;
+  }
+  7.2%{
+    top: 40%;
+    left: 10%;
+    width: 35%;
+    height: 10%;
+    border-radius: 10px;
+    transform: rotate(-5deg);
+    background-color: #110708;
+  }
+  87%{
+    top: 40%;
+    left: 10%;
+    width: 35%;
+    height: 10%;
+    border-radius: 10px;
+    transform: rotate(-5deg);
+    background-color: #110708;
+  }
+  90%{
+    width: 18%;
+    height: 40%;
+    top: 25%;
+    left: 20%;
+    background-color: #05509A;
+  }
+  95%{
+    width: 18%;
+    height: 40%;
+    top: 25%;
+    left: 20%;
+    background-color: #05509A;
+  }
+}
+@keyframes right-eyes-sleep {
+  0%{
+    width: 16%;
+    height: 60%;
+    background-color: #05509A;
+  }
+  7.2%{
+    top: 40%;
+    right: 8%;
+    width: 30%;
+    height: 10%;
+    border-radius: 10px;
+    transform: rotate(5deg);
+    background-color: #110708;
+  }
+  87%{
+    top: 40%;
+    right: 8%;
+    width: 30%;
+    height: 10%;
+    border-radius: 10px;
+    transform: rotate(5deg);
+    background-color: #110708;
+  }
+  90%{
+    top: 40%;
+    right: 12%;
+    width: 25%;
+    height: 10%;
+    border-radius: 10px;
+    transform: rotate(5deg);
+    background-color: #110708;
+  }
+  95%{
+    top: 40%;
+    right: 12%;
+    width: 25%;
+    height: 10%;
+    border-radius: 10px;
+    transform: rotate(5deg);
+    background-color: #110708;
+  }
+}
+@keyframes eyes-top {
+  0%{
+    visibility: visible;
+  }
+  7.2%{
+    visibility: hidden;
+  }
+  87%{
+    visibility: hidden;
+  }
+  90%{
+    visibility: visible;
+  }
+}
+@keyframes eyes-bottom {
+  0%{
+    visibility: visible;
+  }
+  7.2%{
+    visibility: hidden;
+  }
+  87%{
+    visibility: hidden;
+  }
+  90%{
+    visibility: visible;
+  }
+}
+@keyframes mouth-sleep {
+  0%{
+    width: 5%;
+    height: 2%;
+  }
+  50%{
+    width: 5%;
+    height: 2%;
+    right: 42%;
+    bottom: 20%;
+    border-radius: 50%;
+  }
+  68.64%{
+    width: 35%;
+    height: 20%;
+    right: 13%;
+    bottom: 0%;
+    border-radius: 20px;
+  }
+  78.24%{
+    width: 25%;
+    height: 15%;
+    right: 22%;
+    bottom: 0%;
+    border-radius: 20px;
+  }
+  90%{
+    width: 35%;
+    height: 20%;
+    right: 13%;
+    bottom: 0%;
+    border-radius: 20px;
+  }
+}
+@keyframes mouth-saliva-sleep {
+  0%{
+    width: 0;
+    height: 0;
+    border: none;
+  }
+  50%{
+    width: 0;
+    height: 0;
+    border: none;
+  }
+  84%{
+    width: 0;
+    height: 0;
+    border: none;
+  }
+  90%{
+    width: 10%;
+    height: 40%;
+    right:45%;
+    border: solid 0.25rem #110708;
+  }
+  95%{
+    width: 0;
+    height: 0;
+    right:55%;
+    border: none;
+  }
+  100%{
+    width: 0;
+    height: 0;
+    border: none;
+  }
+}

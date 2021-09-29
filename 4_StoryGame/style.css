@@ -1,0 +1,19 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(img/bg.jpg);
+  background-size: cover;
+}
+.swal2-footer{
+  color: #ff5e5e;
+}
+.swal2-content{
+  width: 400px;
+  margin: auto;
+}

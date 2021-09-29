@@ -1,0 +1,117 @@
+*{
+  font-family: 'Noto Sans TC', sans-serif;
+}
+a{
+  text-decoration: none;
+}
+body{
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(45deg, rgba(253,245,208,1) 0%, rgba(255,170,217,1) 100%);
+}
+.bg-div{
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(-25deg, rgba(255,108,137,1) 0%, rgba(255,108,137,1) 15%, transparent 15%, transparent 85%, rgba(255,108,137,1) 85%, rgba(255,108,137,1) 100%);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.bg-circle{
+  width: 100vw;
+  height: 100vh;
+  background-image: url(./image/背景.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position : center;
+  opacity: 0.5;
+}
+.progress{
+  border-radius: 0;
+  padding: 0;
+  background-color: #FFA8D2;
+  background-image: url(image/bottom.png);
+  background-size: cover;
+  background-position: -40px;
+  height: 20px;
+  position: fixed;
+  bottom: 0;
+  animation: bottom 0.8s infinite linear;
+}
+.btn-pink{
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  background-color: #FBC8D9;
+  border:solid #FFA8D2 0.3rem;
+  font-size: 1.2rem;
+  text-shadow: -2px 0 0 #EB2789;
+  color: white;
+  position: relative;
+  transition: all 0.5s;
+}
+.btn-pink::before{
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(40%,-50%) rotate(60deg);
+  background-image: url(./image/星星.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size : contain ;
+  transition: all 0.5s;
+}
+.active,
+.btn-pink:hover{
+  background-color: #fddfe9;
+  border-color: #fdc4e0;
+  color: white;
+  text-shadow: -2px 0 0 #e47bb0;
+  box-shadow: 0 0 0 0.5rem rgba(255, 139, 222, 0.5);
+}
+.active::before,
+.btn-pink:hover::before{
+  width: 30px;
+  height: 30px;
+}
+@media (min-width: 768px){
+  .flex-md-column{
+    height: 75%;
+  }
+  .btn-pink{
+    font-size: 2rem;
+    text-shadow: -3px 1px 0 #EB2789;
+    border-radius: 50px;
+    transform: rotate(-25deg);
+    padding: 0.5rem 3rem;
+    border:solid #FFA8D2 0.5rem;
+  }
+  .active,
+  .btn-pink:hover{
+    text-shadow: -3px 1px 0 #e47bb0;
+  }
+  .active::before,
+  .btn-pink:hover::before{
+    content: "";
+    width: 60px;
+    height: 60px;
+  }
+}
+.place{
+  height: 80vh;
+  position: relative;
+}
+@media (min-width: 768px){
+  .place{
+    height: 100vh;
+    position: relative;
+  }
+}
+@keyframes bottom {
+  100%{
+    background-position: -20px;
+  }
+}

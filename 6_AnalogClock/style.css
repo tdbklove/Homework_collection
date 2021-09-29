@@ -1,0 +1,284 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e4e4e4;
+}
+div.body{
+  width: 583.637px;
+  height: 841.89px;
+  background-image: url(img/手錶-錶身.png);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+div.surface{
+  width: 455.885px;
+  height: 455.885px;
+  background-image: url(img/手錶-錶面.png);
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 15px);
+  transform: translate(-50%,-50%);
+}
+div.surface>div.m{
+  width: 34.856px;
+  height: 455.885px;
+  background-image: url(img/手錶-分針.png);
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  left: 50%;
+  animation: mGoRound 3600s linear infinite;
+}
+div.surface>div.h{
+  width: 34.856px;
+  height: 455.885px;
+  background-image: url(img/手錶-時針.png);
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  left: 50%;
+  animation: hGoRound 43200s linear infinite;
+}
+div.surface>div.s{
+  width: 34.856px;
+  height: 455.885px;
+  background-image: url(img/手錶-秒針.png);
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  left: 50%;
+  animation: sGoRound 60s steps(60,end) infinite;
+}
+div.color{
+  width: 291.579px;
+  height: 291.579px;
+  background-image: url(img/手錶-底色.png);
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+div.hollow{
+  width: 303.879px;
+  height: 305.911px;
+  background-image: url(img/手錶-簍空.png);
+  background-position: top center;
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+div.gear{
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+div.gear1{
+  width: 291.579px;
+  height: 291.579px;
+  background-image: url(img/手錶-零件-35.png);
+}
+div.gear2{
+  width: 291.579px;
+  height: 291.579px;
+  background-image: url(img/手錶-零件-34.png);
+}
+div.gear3{
+  width: 291.579px;
+  height: 291.579px;
+  background-image: url(img/手錶-零件-33.png);
+}
+div.gear4{
+  width: 291.579px;
+  height: 291.579px;
+  background-image: url(img/手錶-零件-32.png);
+}
+div.gear5{
+  width: 291.579px;
+  height: 291.579px;
+  background-image: url(img/手錶-零件-31.png);
+}
+div.gear6{
+  width: 291.579px;
+  height: 291.579px;
+  background-image: url(img/手錶-零件-30.png);
+}
+div.gear7{
+  width: 291.579px;
+  height: 291.579px;
+  background-image: url(img/手錶-零件-29.png);
+}
+div.gear8{
+  width: 291.579px;
+  height: 291.579px;
+  background-image: url(img/手錶-零件-28.png);
+}
+div.gear9{
+  width: 291.579px;
+  height: 291.579px;
+  background-image: url(img/手錶-零件-27.png);
+}
+div.gear10{
+  width: 291.579px;
+  height: 291.579px;
+  background-image: url(img/手錶-零件-26.png);
+}
+div.gear11{
+  width: 291.579px;
+  height: 291.579px;
+  background-image: url(img/手錶-零件-25.png);
+}
+div.gear12{
+  width: 291.579px;
+  height: 291.579px;
+  background-image: url(img/手錶-零件-24.png);
+}
+div.gear13{
+  width: 291.579px;
+  height: 291.579px;
+  background-image: url(img/手錶-零件-23.png);
+}
+div.gear14{
+  width: 291.579px;
+  height: 291.579px;
+  background-image: url(img/手錶-零件-22.png);
+}
+div.gear15{
+  width: 291.579px;
+  height: 291.579px;
+  background-image: url(img/手錶-零件-21.png);
+}
+div.gear16{
+  width: 291.579px;
+  height: 291.579px;
+  background-image: url(img/手錶-零件-20.png);
+}
+div.gear17{
+  width: 291.579px;
+  height: 291.579px;
+  background-image: url(img/手錶-零件-19.png);
+}
+div.gear18{
+  width: 291.579px;
+  height: 291.579px;
+  background-image: url(img/手錶-零件-18.png);
+}
+div.gear19{
+  width: 291.579px;
+  height: 291.579px;
+  background-image: url(img/手錶-零件-17.png);
+}
+div.gear20{
+  width: 291.579px;
+  height: 291.579px;
+  background-image: url(img/手錶-零件-16.png);
+}
+div.gear21{
+  width: 231.738px;
+  height: 231.738px;
+  background-image: url(img/手錶-零件-15.png);
+}
+div.gear22{
+  width: 249.472px;
+  height: 249.472px;
+  background-image: url(img/手錶-零件-14.png);
+}
+div.gear23{
+  width: 263.605px;
+  height: 263.605px;
+  background-image: url(img/手錶-零件-13.png);
+}
+div.gear24{
+  width: 274.544px;
+  height: 274.544px;
+  background-image: url(img/手錶-零件-12.png);
+}
+div.gear25{
+  width: 235.415px;
+  height: 235.415px;
+  background-image: url(img/手錶-零件-11.png);
+}
+div.gear26{
+  width: 144.268px;
+  height: 144.268px;
+  background-image: url(img/手錶-零件-10.png);
+}
+div.gear27{
+  width: 164.327px;
+  height: 164.327px;
+  background-image: url(img/手錶-零件-9.png);
+}
+div.gear28{
+  width: 155.753px;
+  height: 155.753px;
+  background-image: url(img/手錶-零件-8.png);
+}
+div.gear29{
+  width: 155.753px;
+  height: 155.753px;
+  background-image: url(img/手錶-零件-7.png);
+}
+div.gear30{
+  width: 260.235px;
+  height: 260.235px;
+  background-image: url(img/手錶-零件-6.png);
+}
+div.gear31{
+  width: 274.544px;
+  height: 274.544px;
+  background-image: url(img/手錶-零件-5.png);
+}
+div.gear32{
+  width: 263.605px;
+  height: 263.605px;
+  background-image: url(img/手錶-零件-4.png);
+}
+div.gear33{
+  width: 274.544px;
+  height: 274.544px;
+  background-image: url(img/手錶-零件-3.png);
+}
+div.gear34{
+  width: 260.235px;
+  height: 260.235px;
+  background-image: url(img/手錶-零件-2.png);
+}
+div.gear35{
+  width: 249.472px;
+  height: 249.472px;
+  background-image: url(img/手錶-零件-1.png);
+}
+div.gear36{
+  width: 44.686px;
+  height: 44.686px;
+  background-image: url(img/手錶-零件-0.png);
+}
+div.gear37{
+  width: 291.579px;
+  height: 291.579px;
+  background-image: url(img/手錶-玻璃.png);
+  transform: translate(-50%, -50%);
+}
+@keyframes goRound {
+  0%{
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100%{
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

@@ -1,0 +1,653 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+#fly section.kabi{
+  width: 30vh;
+  height: 30vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+#fly div.body{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: solid 0.5rem #110708;
+  background-color: #EC727A;
+  position: relative;
+  overflow: hidden;
+  position: relative;
+  animation: body-fly 4.3s ease-in infinite running;
+}
+#fly div.body>div.body-shadow{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #F097AF;
+  position: absolute;
+  right: 10%;
+  bottom: 13%;
+  animation: body-shadow-fly 4.3s ease-in infinite running;
+}
+#fly div.hand{
+  width: 45.45%;
+  height: 33.3%;
+  border-radius: 50%;
+  background-color: #EC727A;
+  overflow: hidden;
+}
+#fly div.hand>div{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #F097AF;
+}
+#fly div.left.hand{
+  position: absolute;
+  top: 30%;
+  left: -12%;
+  border-top: solid 0.5rem #110708;
+  border-right: none 0.5rem #110708;
+  border-bottom: solid 0.5rem #110708;
+  border-left: solid 0.5rem #110708;
+  transform-origin: 145%;
+  transform: rotate(0deg);
+  animation: left-hand-fly 4.3s ease-in infinite running;
+}
+#fly div.left.hand>div{
+  position: absolute;
+  right: 20%;
+  bottom: 25%;
+}
+#fly div.right.hand{
+  position: absolute;
+  top: 30%;
+  right: -17%;
+  border-top: solid 0.5rem #110708;
+  border-right: solid 0.5rem #110708;
+  border-bottom: solid 0.5rem #110708;
+  border-left: none 0.5rem #110708;
+  transform-origin: -50%;
+  transform: rotate(15deg);
+  animation: right-hand-fly 4.3s ease-in infinite running;
+}
+#fly div.right.hand::before{
+  content : "" ;
+  width: 50%;
+  height: 160%;
+  border-radius: 50%;
+  background-color: #F097AF;
+  position: absolute;
+  top: -50%;
+  left: -15%;
+  animation: right-hand-before-fly 4.3s ease-in infinite running;
+}
+#fly div.right.hand>div{
+  position: absolute;
+  left: 20%;
+  bottom: 25%;
+}
+#fly div.foot{
+  width: 63%;
+  height: 35.5%;
+  border: solid 0.5rem #110708;
+  background-color: #CA0B4D;
+  overflow: hidden;
+  position: absolute;
+}
+#fly div.foot>div{
+  width: 100%;
+  height: 100%;
+  background-color: #DA1A5C;
+  overflow: hidden;
+}
+#fly div.foot>div>div{
+  width: 15%;
+  height: 20%;
+  border-radius: 50%;
+  background-color: #EC727A;
+}
+#fly div.left.foot{
+  border-radius: 50%;
+  position: absolute;
+  left: -10%;
+  bottom: 0%;
+  transform-origin: 60%;
+  transform: rotate(-20deg);
+  animation: left-foot-fly 4.3s ease-in infinite running;
+}
+#fly div.left.foot>div{
+  border-radius: 70% 30% 45% 35%;
+  position: absolute;
+  left: 5%;
+  bottom: 20%;
+}
+#fly div.left.foot>div>div{
+  position: absolute;
+  bottom: 35%;
+  left: 2%;
+  transform: rotate(-25deg);
+}
+#fly div.right.foot{
+  border-radius: 50%;
+  position: absolute;
+  right: -5%;
+  bottom: -12%;
+  transform-origin: 50%;
+  transform: rotate(-40deg);
+  animation: right-foot-fly 4.3s ease-in infinite running;
+}
+#fly div.right.foot>div{
+  border-radius: 70% 30% 45% 35%;
+  position: absolute;
+  left: 5%;
+  bottom: 20%;
+}
+#fly div.right.foot>div>div{
+  position: absolute;
+  bottom: 35%;
+  left: 2%;
+  transform: rotate(-25deg);
+}
+#fly div.expression{
+  width: 64%;
+  height: 40%;
+  position: absolute;
+  top: 35%;
+  left: 30%;
+  /* background-color: #CA0B4D; */
+  transform: translate(-50%,-50%) rotate(10deg);
+  animation: expression-fly 4.3s ease-in infinite running;
+}
+#fly div.eyes{
+  width: 18%;
+  height: 60%;
+  border: solid 0.25rem #110708;
+  background-color: #05509A;
+  border-radius: 50%;
+  overflow: hidden;
+}
+#fly div.eyes>div.top{
+  width: 75%;
+  height: 50%;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%,0);
+}
+#fly div.eyes>div.bottom{
+  width: 150%;
+  height: 100%;
+  background-color: #110708;
+  border-radius: 50%;
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translate(-50%,0);
+}
+#fly div.left.eyes{
+  width: 16%;
+  position: absolute;
+  left: 22%;
+  transform: rotate(10deg);
+}
+#fly div.right.eyes{
+  position: absolute;
+  right: 22%;
+  transform: rotate(-5deg);
+}
+#fly div.blush{
+  width: 20%;
+  height: 17%;
+  border-radius: 50%;
+  background-color: #EC727A;
+  position: absolute;
+  top: 50%;
+  transform: rotate(10deg);
+}
+#fly div.right.blush{
+  width: 20%;
+  height: 17%;
+  border-radius: 50%;
+  background-color: #EC727A;
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  transform: rotate(-10deg);
+}
+#fly div.expression.m{
+  width: 64%;
+  height: 40%;
+  /* background-color: #CA0B4D;
+  opacity: 0.2; */
+  animation: mouth-size-fly 4.3s ease-in infinite running;
+}
+#fly div.mouth{
+  width: 20%;
+  height: 20%;
+  background-color: #801C40;
+  border: solid 0.25rem #110708;
+  border-radius: 40% 40% 60% 60%;
+  position: absolute;
+  left: 48%;
+  bottom: 20%;
+  transform: translate(-50%,0) rotate(2deg);
+  overflow: hidden;
+  animation: mouth-fly 4.3s ease-in infinite running;
+}
+#fly div.mouth>div{
+  width: 100%;
+  height: 120%;
+  border-radius: 50%;
+  background-color: #EC727A;
+  border: solid 0.25rem #110708;
+  position: absolute;
+  right: -80%;
+  bottom: -50%;
+  transform: translate(-50%,0);
+  animation: mouth-tongue-fly 4.3s ease-in infinite running;
+}
+
+@keyframes body-fly {
+  0%{
+    width: 100%;
+    height: 100%;
+  }
+  6.15%{
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+  }
+  12.35%{
+    width: 100%;
+    height: 100%;
+    top: -5%;
+    left: 0%;
+  }
+  23.85%{
+    top: -50%;
+    left: -20%;
+    width: 130%;
+    height: 150%;
+  }
+  33%{
+    top: -45%;
+    left: -25%;
+    width: 140%;
+    height: 140%;
+  }
+  42.3%{
+    top: -50%;
+    left: -20%;
+    width: 130%;
+    height: 150%;
+  }
+  51.5%{
+    top: -45%;
+    left: -25%;
+    width: 140%;
+    height: 140%;
+  }
+  60.7%{
+    top: -50%;
+    left: -20%;
+    width: 130%;
+    height: 150%;
+  }
+  70%{
+    top: -45%;
+    left: -25%;
+    width: 140%;
+    height: 140%;
+  }
+  79.23%{
+    top: -50%;
+    left: -20%;
+    width: 130%;
+    height: 150%;
+  }
+  100%{
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+  }
+}
+
+@keyframes body-shadow-fly {
+  0%{
+    width: 100%;
+    height: 100%;
+    right: 10%;
+    bottom: 13%;
+  }
+  12.35%{
+    width: 100%;
+    height: 100%;
+    right: 10%;
+    bottom: 13%;
+  }
+  23.85%{
+    right: 5%;
+    bottom: 8%;
+  }
+}
+@keyframes left-hand-fly {
+  0%{
+    transform: rotate(0deg);
+  }
+  6.15%{
+    transform: rotate(0deg);
+  }
+  12.35%{
+    transform: rotate(35deg);
+  }
+  23.85%{
+    transform: translate(-10%,-150%) rotate(35deg);
+  }
+  33%{
+    transform: translate(-40%,-150%) rotate(-10deg);
+  }
+  42.3%{
+    transform: translate(-10%,-150%) rotate(35deg);
+  }
+  51.5%{
+    transform: translate(-40%,-150%) rotate(-10deg);
+  }
+  60.7%{
+    transform: translate(-10%,-150%) rotate(35deg);
+  }
+  70%{
+    transform: translate(-40%,-150%) rotate(-10deg);
+  }
+  79.23%{
+    transform: translate(-10%,-150%) rotate(35deg);
+  }
+}
+@keyframes right-hand-fly {
+  0%{
+    transform: rotate(15deg);
+  }
+  6.15%{
+    transform: rotate(15deg);
+  }
+  12.35%{
+    transform: translate(0%,0%) rotate(-27deg);
+  }
+  23.85%{
+    transform: translate(10%,-150%) rotate(-27deg);
+  }
+  33%{
+    transform: translate(10%,-150%) rotate(15deg);
+  }
+  42.3%{
+    transform: translate(10%,-150%) rotate(-27deg);
+  }
+  51.5%{
+    transform: translate(10%,-150%) rotate(15deg);
+  }
+  60.7%{
+    transform: translate(10%,-150%) rotate(-27deg);
+  }
+  70%{
+    transform: translate(10%,-150%) rotate(15deg);
+  }
+  79.23%{
+    transform: translate(10%,-150%) rotate(-27deg);
+  }
+}
+@keyframes right-hand-before-fly {
+  0%{
+    top: -50%;
+    left: -15%;
+  }
+  12.35%{
+    width: 50%;
+    height: 160%;
+    top: -50%;
+    left: -15%;
+  }
+  23.85%{
+    width: 65%;
+    height: 240%;
+  }
+}
+@keyframes left-foot-fly {
+  0%{
+    transform: rotate(-20deg);
+  }
+  6.15%{
+    transform: rotate(-20deg);
+  }
+  12.35%{
+    transform: rotate(-40deg);
+  }
+  33%{
+    transform: rotate(-40deg);
+  }
+  42.3%{
+    transform: rotate(-50deg);
+  }
+  51.5%{
+    transform: rotate(-40deg);
+  }
+  60.7%{
+    transform: rotate(-50deg);
+  }
+  70%{
+    transform: rotate(-40deg);
+  }
+  79.23%{
+    transform: rotate(-50deg);
+  }
+  93%{
+    transform: rotate(-40deg);
+  }
+  100%{
+    transform: rotate(-20deg);
+  }
+}
+@keyframes right-foot-fly {
+  0%{
+    transform: rotate(-40deg);
+  }
+  6.15%{
+    transform: rotate(-40deg);
+  }
+  12.35%{
+    transform: rotate(-60deg);
+  }
+  33%{
+    transform: rotate(-60deg);
+  }
+  42.3%{
+    transform: rotate(-70deg);
+  }
+  51.5%{
+    transform: rotate(-60deg);
+  }
+  60.7%{
+    transform: rotate(-70deg);
+  }
+  70%{
+    transform: rotate(-60deg);
+  }
+  79.23%{
+    transform: rotate(-70deg);
+  }
+  93%{
+    transform: rotate(-60deg);
+  }
+  100%{
+    transform: rotate(-40deg);
+  }
+}
+@keyframes expression-fly {
+  0%{
+    top: 35%;
+    left: 30%;
+  }
+  6.15%{
+    top: 35%;
+    left: 30%;
+  }
+  12.35%{
+    width: 64%;
+    height: 40%;
+    top: 35%;
+    left: 30%;
+  }
+  23.85%{
+    width: 49.23%;
+    height: 26.7%;
+    top: 25%;
+    left: 30%;
+  }
+  100%{
+    width: 64%;
+    height: 40%;
+    top: 35%;
+    left: 30%;
+  }
+}
+@keyframes mouth-size-fly {
+  0%{
+    width: 64%;
+    height: 40%;
+  }
+  6.15%{
+    width: 64%;
+    height: 40%;
+    top: 35%;
+    left: 30%;
+    transform: translate(-50%,-50%) rotate(10deg);
+  }
+  12.35%{
+    height: 100%;
+    top: 50%;
+    left: 28%;
+    transform: translate(-50%,-50%) rotate(0deg);
+  }
+  23.85%{
+    width: 90%;
+    height: 150%;
+    top: 20%;
+    left: 17%;
+    transform: translate(-50%,-50%) rotate(-5deg);
+  }
+  33%{
+    width: 10%;
+    height: 10%;
+    top: 0%;
+    left: 15%;
+  }
+  79.23%{
+    width: 10%;
+    height: 10%;
+    top: 0%;
+    left: 15%;
+  }
+  87%{
+    width: 70%;
+    height: 100%;
+    top: 25%;
+    left: 17%;
+    transform: translate(-50%,-50%) rotate(0deg);
+  }
+  93%{
+    width: 30%;
+    height: 50%;
+    top: 40%;
+    left: 30%;
+    transform: translate(-50%,-50%) rotate(0deg);
+  }
+}
+@keyframes mouth-fly {
+  0%{
+    width: 20%;
+    height: 20%;
+    border-radius: 40% 40% 60% 60%;
+  }
+  6.15%{
+    width: 20%;
+    height: 20%;
+    border-radius: 40% 40% 60% 60%;
+  }
+  12.35%{
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+  }
+  33%{
+    left: 48%;
+    bottom: 20%;
+  }
+  42.3%{
+    left: 40%;
+    bottom: 0%;
+  }
+  51.5%{
+    left: 35%;
+    bottom: 20%;
+  }
+  60.7%{
+    left: 40%;
+    bottom: 0%;
+  }
+  70%{
+    left: 35%;
+    bottom: 20%;
+  }
+  79.23%{
+    left: 40%;
+    bottom: 0%;
+  }
+  87%{
+    width: 30%;
+    height: 50%;
+    border-radius: 50%;
+    left: 45%;
+    bottom: 15%;
+  }
+  93%{
+    width: 40%;
+    height: 50%;
+    border-radius: 50%;
+    left: 20%;
+    bottom: 32%;
+  }
+}
+@keyframes mouth-tongue-fly {
+  0%{
+    width: 100%;
+    height: 120%;
+    right: -80%;
+    bottom: -50%;
+  }
+  6.15%{
+    width: 100%;
+    height: 120%;
+    right: -80%;
+    bottom: -50%;
+  }
+  12.35%{
+    width: 150%;
+    height: 120%;
+    right: -130%;
+    bottom: -30%;
+  }
+  23.85%{
+    bottom: -40%;
+  }
+  33%{
+    bottom: -50%;
+  }
+  79.23%{
+    bottom: -50%;
+  }
+}

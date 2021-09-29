@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>色彩作業</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="pos">
+    <!-- 顏色框 -->
+    <div class="color"></div>
+    <div class="rgb">
+      <div class="zone">
+        <!-- R -->
+        <button onclick="a_rgb('r')">R</button>
+        <input type="range" min="0" max="255" id="color_r" step="1" oninput="rgb()">
+      </div>
+      <div class="zone">
+        <!-- G -->
+        <button onclick="a_rgb('g')">G</button>
+        <input type="range" min="0" max="255" id="color_g" step="1" oninput="rgb()">
+      </div>
+      <div class="zone">
+        <!-- B -->
+        <button onclick="a_rgb('b')">B</button>
+        <input type="range" min="0" max="255" id="color_b" step="1" oninput="rgb()">
+      </div>
+    </div>
+    <div class="item">
+      <!-- + / - / ? -->
+      <button onmousedown="num('add')">+</button>
+      <button onmousedown="num('sub')">-</button>
+      <button onmousedown="random()">?</button>
+    </div>
+  </div>
+</body>
+</html>
+
+<script>
+    // 色碼文字改色
+    let textColor = ()=>{
+      let
+        r = document.querySelector("#color_r").value,
+        g = document.querySelector("#color_g").value,
+        b = document.querySelector("#color_b").value; 
+
+      document.querySelector(".color").style.color=`rgb(${255-r},${255-g},${255-b})`;
+    }
+
+    // rgb數值轉16進制
+    let text = () => {
+      r = document.querySelector("#color_r").value,
+      g = document.querySelector("#color_g").value,
+      b = document.querySelector("#color_b").value;
+
+    let num = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
+
+    let
+      c1 = Math.floor(Number(r)/16),
+      c2 = Number(r)%16,
+      c3 = Math.floor(Number(g)/16),
+      c4 = Number(g)%16,
+      c5 = Math.floor(Number(b)/16),
+      c6 = Number(b)%16;
+
+    let colorNum = `#${num[c1]}${num[c2]}${num[c3]}${num[c4]}${num[c5]}${num[c6]}`;
+
+    document.querySelector(".color").textContent=`${colorNum}`;
+
+    textColor();
+  }
+
+  // 隨機生成顏色
+  let random = () => {
+    let nums = new Array();
+
+    for(let i=1; i<=3; i++){
+      let num = Math.floor(Math.random()*256);
+      nums.push(num);
+    }
+
+    document.querySelector(".color").style.backgroundColor=`rgb(${nums[0]},${nums[1]},${nums[2]})`;
+    document.querySelector("#color_r").value=`${nums[0]}`;
+    document.querySelector("#color_g").value=`${nums[1]}`;
+    document.querySelector("#color_b").value=`${nums[2]}`;
+
+    text();
+  }
+
+  random();
+
+  // 拉桿改色
+  let rgb = () => {
+    let
+      r = document.querySelector("#color_r").value,
+      g = document.querySelector("#color_g").value,
+      b = document.querySelector("#color_b").value;
+
+    document.querySelector(".color").style.backgroundColor=`rgb(${r},${g},${b})`;
+
+    text();
+  }
+
+  // 彈窗改色
+  let a_rgb = (e) => {
+    let
+      r = document.querySelector("#color_r").value,
+      g = document.querySelector("#color_g").value,
+      b = document.querySelector("#color_b").value;
+
+    switch(e){
+      case "r":
+        color = r;
+        break;
+      case "g":
+        color = g;
+        break;
+      case "b":
+        color = b;
+        break;
+    }
+
+    let num = prompt("請輸入0-255之間的數值",color);
+    if(num == null) num = color;
+    
+    while(num > 255 || num < 0 || num == ""){
+      num = prompt("請輸入0-255之間的數值",color);
+      if(num == null) num = color;
+    }
+
+    switch(e){
+      case "r":
+        document.querySelector(".color").style.backgroundColor=`rgb(${num},${g},${b})`;
+        document.querySelector("#color_r").value= `${num}`;
+        break;
+      case "g":
+        document.querySelector(".color").style.backgroundColor=`rgb(${r},${num},${b})`;
+        document.querySelector("#color_g").value= `${num}`;
+        break;
+      case "b":
+        document.querySelector(".color").style.backgroundColor=`rgb(${r},${g},${num})`;
+        document.querySelector("#color_b").value= `${num}`;
+        break;
+    }
+    
+    text();
+  }
+
+  // 顏色數值調整
+  let num = (e) => {
+    let
+      r = document.querySelector("#color_r").value,
+      g = document.querySelector("#color_g").value,
+      b = document.querySelector("#color_b").value;
+
+    switch(e){
+      case "add":
+        r=Number(r)+1, g=Number(g)+1, b=Number(b)+1;
+        document.querySelector(".color").style.backgroundColor=`rgb(${r},${g},${b})`;
+        document.querySelector("#color_r").value= `${r}`;
+        document.querySelector("#color_g").value= `${g}`;
+        document.querySelector("#color_b").value= `${b}`;
+        break;
+      case "sub":
+        r=Number(r)-1, g=Number(g)-1, b=Number(b)-1;
+        document.querySelector(".color").style.backgroundColor=`rgb(${r},${g},${b})`;
+        document.querySelector("#color_r").value= `${r}`;
+        document.querySelector("#color_g").value= `${g}`;
+        document.querySelector("#color_b").value= `${b}`;
+        break;
+    }
+
+    text();
+  }
+</script>

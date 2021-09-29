@@ -1,0 +1,75 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+}
+div.box>div::before{
+  content: "剩餘時間";
+  position: absolute;
+  top: -14%;
+  left: -5%;
+  color: #F7B22D;
+  font-family: 'Noto Serif KR', serif;
+  font-size: 3.5rem;
+}
+div.box{
+  width: 700px;
+  height: 400px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  position: relative;
+}
+span{
+  color: #E61D1E;
+  font-family: 'ZCOOL QingKe HuangYou', cursive;
+  font-size: 13rem;
+}
+span#s,span.sm{
+  font-size: 10rem;
+}
+div.time{
+  display: flex;
+  height: 65px;
+}
+div.time>div.countdown{
+  display: flex;
+  justify-content: space-between;
+  flex-basis: 62%;
+}
+div.time>div.countdown>div{
+  font-family: 'Nanum Gothic', sans-serif;
+  width: 100px;
+  height: 65px;
+  background-color: #F7B22D;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+input{
+  width: 85%;
+  height: 22px;
+  font-family: 'Nanum Gothic', sans-serif;
+  background-color: #6A5024;
+  border: none;
+  margin-top: 5px;
+  color: #E61D1E;
+}
+button#sub{
+  width: 110px;
+  background-color: #6A5024;
+  border: none;
+  color: #E61D1E;
+  font-size: 1.3rem;
+}
+button#sub>span{
+  font-family: 'Noto Serif KR', serif;
+  font-size: 1.5rem;
+}

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>數位時鐘</title>
+  <script src="jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Serif+KR:wght@700;900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div class="box">
+    <div class="co_text">
+      <div class="bg">
+        <div class="zero"></div>
+        <div class="zero"></div>
+        <div class="colon"></div>
+        <div class="zero"></div>
+        <div class="zero"></div>
+        <div class="colon"></div>
+        <div class="zero sm" style="width:94px;background-position: center bottom;"></div>
+        <div class="zero sm" style="width:94px;background-position: center bottom;"></div>
+      </div>
+      <div class="show">
+        <div id="h1" class="zero"></div>
+        <div id="h2" class="zero"></div>
+        <div class="colon"></div>
+        <div id="m1" class="zero"></div>
+        <div id="m2" class="zero"></div>
+        <div class="colon"></div>
+        <div id="s1" class="zero sm" style="width:94px;background-position: center bottom;"></div>
+        <div id="s2" class="zero sm" style="width:94px;background-position: center bottom;"></div>
+      </div>
+    </div>
+    <div class="time">
+      <div class="countdown">
+        <div>
+          <h3>HOUR</h3>
+          <input type="number" name="h" min="0" max="23" value="0" step="1">
+        </div>
+        <div>
+          <h3>MINUTE</h3>
+          <input type="number" name="m" min="0" max="59" value="0" step="1">
+        </div>
+        <div>
+          <h3>SECOND</h3>
+          <input type="number" name="s" min="0" max="59" value="0" step="1">
+        </div>
+        <button id="sub"><span>開始計時</span>START</button>
+      </div>
+      <div class="clock d-none">
+        <div class="vids">西元</div>
+        <div><span id="y"></span>年</div>
+        <div><span id="mo"></span>月</div>
+        <div><span id="d"></span>日</div>
+      </div>
+      <div class="input">
+        <button id="countdown" class="active"><div><span>倒數器</span>COUNTDOWN</div></button>
+        <button id="clock"><div><span>時鐘</span>CLOCK</div></button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+<script>
+  
+
+  $("#clock").click(function(){
+
+    $("#countdown").removeClass("active");
+    $("#clock").addClass("active");
+    $(".countdown").addClass("d-none");
+    $(".clock").removeClass("d-none");
+    $("div.box>div").addClass("cl_text");
+    $("div.box>div").removeClass("co_text");
+
+    let time = new Date();
+
+    let
+      y = time.getFullYear(),
+      mo = time.getMonth()+1,
+      d = time.getDate();
+      h = time.getHours(),
+      m = time.getMinutes(),
+      s = time.getSeconds(); 
+
+      mo = (mo<10)? "0"+mo : mo;
+      d = (d<10)? "0"+d : d;
+      h = (h<10)? "0"+h : h;
+      m = (m<10)? "0"+m : m;
+      s = (s<10)? "0"+s : s;    
+
+    let
+      hs = String(h).split(""),
+      ms = String(m).split(""),
+      ss = String(s).split("");
+
+    $("#y").text(y);
+    $("#mo").text(mo);
+    $("#d").text(d);
+    $("#h1").removeClass().addClass(`wh num${hs[0]}`);
+    $("#h2").removeClass().addClass(`wh num${hs[1]}`);
+    $("#m1").removeClass().addClass(`wh num${ms[0]}`);
+    $("#m2").removeClass().addClass(`wh num${ms[1]}`);
+    $("#s1").removeClass().addClass(`wh num${ss[0]}`);
+    $("#s2").removeClass().addClass(`wh num${ss[1]}`);
+
+    const clock = setInterval(function(){   
+
+      time = new Date();  
+    
+      h = time.getHours();
+      m = time.getMinutes();
+      s = time.getSeconds(); 
+
+      h = (h<10)? "0"+h : h;
+      m = (m<10)? "0"+m : m;
+      s = (s<10)? "0"+s : s;  
+      hs = String(h).split("");
+      ms = String(m).split("");
+      ss = String(s).split("");
+
+      $("#h1").removeClass().addClass(`wh num${hs[0]}`);
+      $("#h2").removeClass().addClass(`wh num${hs[1]}`);
+      $("#m1").removeClass().addClass(`wh num${ms[0]}`);
+      $("#m2").removeClass().addClass(`wh num${ms[1]}`);
+      $("#s1").removeClass().addClass(`wh num${ss[0]}`);
+      $("#s2").removeClass().addClass(`wh num${ss[1]}`);
+
+    },1000);  
+
+    $("#countdown").click(function(){
+      clearInterval(clock);
+    })
+
+  })
+
+
+  $("#countdown").click(function(){
+    
+    $("#sub").attr("disabled",false);
+    $("#clock").removeClass("active");
+    $("#countdown").addClass("active");
+    $(".clock").addClass("d-none");
+    $(".countdown").removeClass("d-none");
+    $("div.box>div").addClass("co_text");
+    $("div.box>div").removeClass("cl_text");
+    $("#h1").removeClass().addClass(`wh num0`);
+    $("#h2").removeClass().addClass(`wh num0`);
+    $("#m1").removeClass().addClass(`wh num0`);
+    $("#m2").removeClass().addClass(`wh num0`);
+    $("#s1").removeClass().addClass(`wh num0`);
+    $("#s2").removeClass().addClass(`wh num0`);
+  })
+
+  $("#sub").click(function(){
+    
+    let 
+        h =  $("input[name='h']").val(),
+        m =  $("input[name='m']").val(),
+        s =  $("input[name='s']").val();
+
+    if(Number(h)<0 || Number(m)<0 || Number(s)<0 || Number(h)>23 || Number(m)>59 || Number(s)>59){
+
+      alert("請輸入正確的數值");
+
+    }else{
+
+      let num = Number((h*60*60)) + Number((m*60)) + Number(s);
+  
+      h = (h<10)? "0"+h : h;
+      m = (m<10)? "0"+m : m;
+      s = (s<10)? "0"+s : s;
+      
+      let
+        hs = String(h).split(""),
+        ms = String(m).split(""),
+        ss = String(s).split("");
+        
+      $("#h1").removeClass().addClass(`wh num${hs[0]}`);
+      $("#h2").removeClass().addClass(`wh num${hs[1]}`);
+      $("#m1").removeClass().addClass(`wh num${ms[0]}`);
+      $("#m2").removeClass().addClass(`wh num${ms[1]}`);
+      $("#s1").removeClass().addClass(`wh num${ss[0]}`);
+      $("#s2").removeClass().addClass(`wh num${ss[1]}`);
+
+      const countdown = setInterval(function(){
+        if(Number(h)>0 || Number(m)>0 || Number(s)>0){
+          $("#sub").attr("disabled",true);
+          num--;
+          console.log(num);
+          h = Math.floor(num/60/60);
+          m = Math.floor((num/60%60));
+          s = Math.floor((num-(h*60*60)-(m*60)));
+          h = (h<10)? "0"+h : h;
+          m = (m<10)? "0"+m : m;
+          s = (s<10)? "0"+s : s;
+
+          hs = String(h).split(""),
+          ms = String(m).split(""),
+          ss = String(s).split("");
+
+          $("#h1").removeClass().addClass(`wh num${hs[0]}`);
+          $("#h2").removeClass().addClass(`wh num${hs[1]}`);
+          $("#m1").removeClass().addClass(`wh num${ms[0]}`);
+          $("#m2").removeClass().addClass(`wh num${ms[1]}`);
+          $("#s1").removeClass().addClass(`wh num${ss[0]}`);
+          $("#s2").removeClass().addClass(`wh num${ss[1]}`);
+        }else{
+          alert("時間到");
+          clearInterval(countdown);
+          $("#sub").attr("disabled",false);
+        }
+      },1000);
+
+      $("#clock").click(function(){
+        clearInterval(countdown);
+      })
+
+    }
+
+  })
+
+</script>
